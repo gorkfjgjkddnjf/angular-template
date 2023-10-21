@@ -1,0 +1,52 @@
+{
+  "name": "angular-template",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --open",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "stylelint": "npx stylelint \"**/*.scss\" --fix",
+    "prepare": "husky install config/husky"
+  },
+  "dependencies": {
+    "@angular/animations": "16.2.10",
+    "@angular/common": "16.2.10",
+    "@angular/compiler": "16.2.10",
+    "@angular/core": "16.2.10",
+    "@angular/forms": "16.2.10",
+    "@angular/platform-browser": "16.2.10",
+    "@angular/platform-browser-dynamic": "16.2.10",
+    "@angular/router": "16.2.10",
+    "rxjs": "7.8.1",
+    "tslib": "2.6.2",
+    "zone.js": "0.13.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "16.2.7",
+    "@angular-eslint/eslint-plugin": "16.2.0",
+    "@angular-eslint/eslint-plugin-template": "16.2.0",
+    "@angular-eslint/template-parser": "16.2.0",
+    "@angular/cli": "16.2.7",
+    "@angular/compiler-cli": "16.2.10",
+    "@typescript-eslint/eslint-plugin": "6.8.0",
+    "@typescript-eslint/parser": "6.8.0",
+    "eslint": "8.52.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "2.28.1",
+    "husky": "8.0.3",
+    "lint-staged": "13.1.2",
+    "stylelint": "15.11.0",
+    "stylelint-config-clean-order": "5.2.0",
+    "typescript": "5.1.6"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ],
+    "./src/**/.scss": [
+      "stylelint --fix --cache"
+    ]
+  }
+}
