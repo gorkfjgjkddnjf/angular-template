@@ -26,7 +26,9 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/app/assets"
+              { "glob": "**/*", "input": "src/app/assets", "output": "/assets", "ignore": ["**/*.json", "**/*.txt"] },
+              { "glob": "robots.txt", "input": "src/app/assets/robots", "output": "/" },
+              { "glob": "manifest.json", "input": "src/app/assets/manifest", "output": "/" }
             ],
             "styles": [],
             "scripts": []
@@ -60,6 +62,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 3000,
+            "open": true
+          },
           "configurations": {
             "production": {
               "browserTarget": "angular-template:build:production"
